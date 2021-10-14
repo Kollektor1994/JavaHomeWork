@@ -11,7 +11,7 @@ public class Interval {
         System.out.print("Проверка попадания числа в интервал от 0 до 100" + "\n" + "Введите число: ");
 
         in = new Scanner(System.in);
-        byte i = in.nextByte();
+        int i = in.nextInt();
 
         if (i >= a && i <= b) {
             System.out.print("Ваше число " + i + " попадает в интервал от " + a + " до " + b + "\n");
@@ -21,6 +21,10 @@ public class Interval {
             System.out.print("Ваше число " + i + " попадает в интервал от " + d + " до " + e + "\n");
         } else if (i >= e && i <= f) {
             System.out.print("Ваше число " + i + " попадает в интервал от " + e + " до " + f + "\n");
+        }   else if (f<= i) {
+            System.out.print("Ваше число " + i + " не попадает ни в один интервал");
+    }   else if (a <= -i && -i <= f) {
+        System.out.print("Ваше число " + i + " является отрицательным");
 
         }
     }
