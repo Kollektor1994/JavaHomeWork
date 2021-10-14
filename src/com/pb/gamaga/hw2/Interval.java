@@ -1,3 +1,5 @@
+package com.pb.gamaga.hw2;
+
 import java.util.Scanner;
 
 public class Interval {
