@@ -4,27 +4,38 @@ public class Calculator {
     public static void main(String[] args) {
         double operand1;
         double operand2;
-        double ans;
+        double ans = 0;
         char op;
         Scanner reader = new Scanner(System.in);
-        System.out.print("Enter two numbers: ");
+        System.out.println("Enter two numbers: ");
         operand1 = reader.nextDouble();
         operand2 = reader.nextDouble();
-        System.out.print("\nEnter an operator (+, -, *, /): ");
+        System.out.println("\nEnter an operator (+, -, *, /): ");
         op = reader.next().charAt(0);
         switch(op) {
             case '+': ans = operand1 + operand2;
+                System.out.println ("The result is given as follows:");
+                System.out.println(operand1 + " " + op + " " + operand2 + " = " + ans);
                 break;
             case '-': ans = operand1 - operand2;
+                System.out.println ("The result is given as follows:");
+                System.out.println(operand1 + " " + op + " " + operand2 + " = " + ans);
                 break;
             case '*': ans = operand1 * operand2;
+                System.out.println ("The result is given as follows:");
+                System.out.println(operand1 + " " + op + " " + operand2 + " = " + ans);
                 break;
-            case '/': ans = operand1 / operand2;
+            case '/':  if (operand2 == 0) {
+                System.out.println("Деление на ноль не возможно");
+                } else
+                {
+                    ans = operand1 / operand2;
+                System.out.println ("The result is given as follows:");
+                System.out.println(operand1 + " " + op + " " + operand2 + " = " + ans);
+                    }
                 break;
-            default:  System.out.printf("Error! Enter correct operator");
-                return;
+            default:
+                System.out.println("Error! Enter correct operator"); return;
         }
-        System.out.print("\nThe result is given as follows:\n");
-        System.out.printf(operand1 + " " + op + " " + operand2 + " = " + ans);
     }
 }
